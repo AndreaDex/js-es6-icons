@@ -106,13 +106,22 @@ const icons =[
  *Milestone 1:
   Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout.
 */
+let colore ;
 const mainEl = document.querySelector(".container");
 console.log(mainEl);
  icons.forEach((item) =>{
+     if(item.type === "animal"){
+         colore = "blue"
+     } else if (item.type === "vegetable"){
+        colore = "orange"
+    } else if (item.type === "user") {
+        colore = "purple"
+        
+    } 
     mainEl.insertAdjacentHTML("beforeend", 
     `
-    <div class="card">
-        <i class="${item.family} ${item.prefix}${item.name} ${item.type}"></i>
+    <div class="card  ${item.type}">
+        <i class="${item.family} ${item.prefix}${item.name}" style = "color:${colore}"  ></i>
         <h3>${item.name}</h3>
     </div>
     `)
@@ -121,14 +130,36 @@ console.log(mainEl);
 
 /* Milestone 2 Coloriamo le icone per tipo */
 
-/*Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone
- */
+
+// !Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone
+
 
 let select = document.getElementById("tipo");
-select.addEventListener("change", function()){
 
-    let opzione = document.
+select.addEventListener("change", function(){
+
+    let valoreselect = select.value;
     
+    if(valoreselect === "animali"){
+        icons.filter(item => {
+            return item.type === "animal"
+        })
+       
+    }
+
+     
 
 
-}
+}) 
+
+
+
+
+/* 
+let animaliElems = document.getElementsByClassName("animal") ;
+    let vegetableElems = document.getElementsByClassName("vegetable") ;
+    let userElems = document.getElementsByClassName("user");
+    console.log(animaliElems);
+    console.log(vegetableElems);
+    console.log(userElems);
+ */
