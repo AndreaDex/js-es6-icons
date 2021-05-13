@@ -106,6 +106,7 @@ const icons =[
  *Milestone 1:
   Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout.
 */
+
 let colore ;
 const mainEl = document.querySelector(".container");
 console.log(mainEl);
@@ -115,12 +116,12 @@ console.log(mainEl);
      } else if (item.type === "vegetable"){
         colore = "orange"
     } else if (item.type === "user") {
-        colore = "purple"
-        
+        colore = "purple"  
     } 
+
     mainEl.insertAdjacentHTML("beforeend", 
     `
-    <div class="card  ${item.type}">
+    <div class="card">
         <i class="${item.family} ${item.prefix}${item.name}" style = "color:${colore}"  ></i>
         <h3>${item.name}</h3>
     </div>
@@ -141,16 +142,29 @@ select.addEventListener("change", function(){
     let valoreselect = select.value;
     
     if(valoreselect === "animali"){
-        icons.filter(item => {
+        console.log("ok")
+        let filtraAnimali = icons.filter(item => {
             return item.type === "animal"
         })
        
-    }
+    }/*else if (valoreselect === "vegetali") {
+        icons.filter(item => {
+            return item.type === "vegetable"
+        })
 
-     
-
-
+    } else if (valoreselect === "utenti"){
+        icons.filter(item => {
+            return item.type === "user"
+        })
+    } */
 }) 
+
+
+
+
+
+
+
 
 
 
