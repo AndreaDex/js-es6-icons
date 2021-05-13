@@ -118,3 +118,17 @@ console.log(mainEl);
     `)
 
 })
+
+/* Milestone 2 Coloriamo le icone per tipo */
+
+/*Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone
+ */
+
+let select = document.getElementById("tipo");
+select.addEventListener("change", function()){
+
+    let opzione = document.
+    
+
+
+}
