@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+.none {
+  display: none !important;
+}
+
 /* Header style */
 h1 {
   color: #29b1dd;
